@@ -1,0 +1,17 @@
+// Here, we're looping through the @tweets array we set in the site controller index action and using the keyword tweet to call
+// the attributes of each tweet
+
+%ul
+- @tweets.each do |tweet|
+  %li
+    %a.profile_image{:href => "http://twitter.com/#{tweet.user}"}
+      = image_tag(tweet.profile_image_url)
+    %p
+      = tweet.text
+      %br/
+      %span.from
+        from
+        %a{:href => "http://twitter.com/#{tweet.user}"}
+          = tweet.user
+    .clearboth
+      
